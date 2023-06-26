@@ -1,28 +1,25 @@
 package com.axonactive.PersonalProject.service.dto;
 
-import com.axonactive.PersonalProject.entity.BorrowNoteDetail;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class BorrowNoteDetailDTO {
-    @JsonIgnore
+@NoArgsConstructor
+@Builder
+public class CreateBorrowNoteResponseDTO {
     private Long id;
-    private Long physicalBookID;
-    private String physicalBookName;
-    private Long borrowNoteID;
     private Long customerID;
     private String customerFirstName;
     private String customerLastName;
     private String customerPhoneNumber;
-    private LocalDate returnDate;
-    private Double fineFee;
+    private String address;
+    private LocalDate borrowDate;
+    private LocalDate dueDate;
+    private List<BorrowNoteDetailDTO> borrowNoteDetailDTOList;
 }
